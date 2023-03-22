@@ -57,6 +57,13 @@ set background=dark
 " 根据文件后缀加载缩进规则和插件
 filetype plugin indent on
 
+" 设置ctrlp路径
+set runtimepath^=~/.vim/pack/vendor/start/ctrlp.vim
+" 设置ctrlp快捷键
+let g:ctrlp_map ='<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode ='ra' "设置默认路径为当前路径
+
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
 "set showcmd		" Show (partial) command in status line.
@@ -86,3 +93,9 @@ set foldmethod=syntax " 设置语法折叠
 set foldcolumn=0 " 设置折叠区域的宽度
 setlocal foldlevel=1 " 设置折叠层数为 1
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR> " 用空格键来开关折叠
+
+" plug
+call plug#begin()
+Plug 'preservim/NERDTree'
+Plug 'wikitopian/hardmode'
+call plug#end()
